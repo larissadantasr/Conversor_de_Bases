@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<style>
+
+* {
+    margin: 0;
+}
+
+body {
+    background-image: linear-gradient(rgba(144, 238, 144, 0.61),rgb(180, 233, 167), rgba(149, 229, 187, 1),rgb(205, 241, 252));
+    min-height: 100vh;
+    display: grid;
+    place-items: center; 
+}
+
+h1{
+    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color:rgba(27, 138, 36, 0.767);
+    text-align: left;
+}
+.img-bin{
+    float: right;
+}
+section {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.788);
+    padding: 50px;
+    width: 400px;
+    border-radius: 12px;
+    box-shadow: 4px 5px 4px rgba(0, 0, 0, 0.25);
+}
+
+input{
+    border-color: rgb(138, 247, 143);
+    border:none;
+    border-radius: 20px;
+    width: 330px;
+    box-shadow: 4px 5px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+
+#ipt_decimal{
+    height: 20px;
+    background-color: rgba(138, 247, 144, 0.514);
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+}
+#ipt_octal{
+    height: 20px;
+    background-color: rgba(138, 247, 144, 0.514);
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 4px 5px 4px rgba(0, 0, 0, 0.25);
+}
+#ipt_hexadecimal{
+    height: 20px;
+    background-color: rgba(138, 247, 144, 0.514);
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 4px 5px 4px rgba(0, 0, 0, 0.25);
+}
+#ipt_bin{
+    height: 20px;
+    background-color: rgba(138, 247, 144, 0.514);
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 4px 5px 4px rgba(0, 0, 0, 0.25);
+}
+
+.p-para{
+    color: rgb(27, 138, 36);
+    margin: 10px;
+}
+.div-octal {
+    margin: 20px;
+}
+
+.div-hex {
+    margin: 20px;
+}
+.div-bin{
+    margin: 20px;
+}
+button{
+    border: none;
+    border-radius: 50px;
+    padding: 13px;
+    background-color: rgb(138, 247, 143);
+    box-shadow: 4px 5px 4px rgba(0, 0, 0, 0.25);
+}
+
+.botao:hover{
+     background-color: rgba(39, 155, 48, 0.74);
+}
+
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Bases</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="principal">
+        <img src="https://cdn-icons-png.flaticon.com/512/87/87106.png" alt="binarios" width="70px" class="img-bin">
+        <h1 class="h1-conv">Conversor <br> Bases Numéricas</h1>
+        
+        
+        <br>
+
+        <div class="div-decimal">
+            <p><b>Converter</b> <b id="style-decimal">Decimal:</b></p>
+            <input type="text" id="ipt_decimal">
+        </div>
+
+        <div class="p-para">
+            <p><b>Para:</b></p>
+        </div>
+
+        <div class="div-octal">
+            <p><b>Octal:</b></p>
+            <div id="ipt_octal"></div>
+        </div>
+
+        <div class="div-hex">
+            <p><b>Hexadecimal:</b></p>
+            <div id="ipt_hexadecimal"></div>
+        </div>
+
+        <div class="div-bin">
+            <p><b>Binário:</b></p>
+            <div id="ipt_bin"></div>
+        </div>
+
+        <button onclick="converter()" class="botao">Converter</button>
+
+        <button onclick="limpar()" class="botao">Limpar</button>
+
+    </section>
+
+
+</body>
+
+</html>
+
+<script>
+    function converter() {
+
+        var decimal = Number(ipt_decimal.value);
+
+        let octal = decimal.toString(8);
+
+        let hexadecimal = decimal.toString(16);
+
+        let binaria = decimal.toString(2);
+
+        console.log(decimal);
+        console.log(octal);
+        console.log(hexadecimal);
+        console.log(binaria);
+
+        document.getElementById("ipt_decimal").innerHTML = `${decimal}`;
+        document.getElementById("ipt_octal").innerHTML = `${octal}`;
+        document.getElementById("ipt_hexadecimal").innerHTML = `${hexadecimal}`;
+        document.getElementById("ipt_bin").innerHTML = `${binaria}`;
+    }
+
+    function limpar() {
+        ipt_decimal.innerHTML = ``;
+        ipt_octal.innerHTML = ``;
+        ipt_hexadecimal.innerHTML = ``;
+        ipt_bin.innerHTML = ``;
+    }
+</script>
